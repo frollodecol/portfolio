@@ -1,0 +1,19 @@
+@media (max-width: 960px) {
+  .left {
+    position: static;
+    width: 100%;
+
+    .left-container {
+      width: 100%;
+      margin: 0px auto;
+    }
+
+    .navigation {
+      display: none;
+    }
+    .contacts {
+      display: none;
+    }
+  }
+  
+}
