@@ -5,19 +5,11 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"/>
-    <!--build:css css/style.min.css-->
-    <link rel="stylesheet" href="css/style.css"/>
-    <!--endbuild-->
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
     <div class="popup">
-      <div class="popup__shadow"></div>
-      <form class="popup__window" id="feedback" method="post">
-        <input type="text" name="feedbackName" required="required" placeholder="Имя"/>
-        <input type="email" name="feedbackEmail" required="required" placeholder="E-mail"/>
-        <textarea name="feedbackMessage" required="required">Введите здесь своё сообщение. Дополнительные контакты, помимо e-mail'а, очень приветствуются.</textarea>
-        <input type="submit" value="Отправить"/>
-      </form>
+      <form class="window"></form>
     </div>
     <div class="left">
       <div class="left-container">
@@ -59,7 +51,7 @@
           <p>И ещё немножко</p>
           <p class="additional-hide">Скрыть</p>
         </div>
-        <p>Если верстальщик нужен вам не на постоянную работу, а просто требуется сверстать сайт-другой, посмотрите раздел "Для заказчиков".</p>
+        <p>Если вам не нужен верстальщик на постоянную работу, а нужно просто сверстать сайт-другой, посмотрите раздел "Для заказчиков".</p>
       </div>
       <div class="page__portfolio">
         <div class="page__title">Портфолио</div>
@@ -75,9 +67,6 @@
       </div>
       <div class="copyright">Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a></div>
     </div>
-    <!--build:js js/main.min.js   -->
-    <script src="js/main.js"> </script>
-    <script src="js/contact.js">   </script>
-    <!--endbuild-->
+    <script src="js/main.min.js"></script>
   </body>
 </html>

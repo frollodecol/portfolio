@@ -1,0 +1,57 @@
+@media (max-width: 620px) {
+  .right {
+    .page__about, .page__portfolio, .page__for-customer {
+      margin: 0px;
+      border: none;
+      width: 100%;
+      padding: 0px;
+      padding-bottom: 30px;
+
+      .page__title {
+        padding: 20px;
+        margin-bottom: 0px;
+      }
+      p {
+        padding-left: 20px;
+      }
+    }
+    .copyright {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      border: none;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+
+  .left {
+    .left-container {
+      &__title {
+        height: 150px;
+        border-bottom: 1px solid #e6e6e6;
+
+        .position {
+          display: none;
+        }
+      }
+      &__description {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        width: 100%;
+
+        .navigation .item:first-child {
+          border-top: none;
+        }
+        .navigation .item {
+          padding-left: 20px;
+        }
+        .contacts {
+          padding-left: 20px;
+          padding-bottom: 30px;
+          border-bottom: 1px solid #e6e6e6;
+        }
+      }
+    }
+  }
+}

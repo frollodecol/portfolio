@@ -4,32 +4,66 @@ html
     title Клод Фролло - HTML-верстальщик
     meta(charset='utf-8')
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='shortcut icon' href='/images/favicon.ico' type='image/x-icon')
     //build:css css/style.min.css
     link(rel='stylesheet' href='css/style.css')
     //endbuild
   body
+    .popup
+        .popup__shadow
+        form.popup__window#feedback(method='post')
+            input(type='text' name='feedbackName' required placeholder='Имя')
+            input(type='email' name='feedbackEmail' required placeholder='E-mail')
+            textarea(name='feedbackMessage' required) Введите здесь своё сообщение. Дополнительные контакты, помимо e-mail'а, очень приветствуются.
+            input(type='submit' value='Отправить')
+
     .left
         .left-container
-            .name Клод Фролло
-            .position HTML-верстальщик
-            .navigation
-                .item.about.active Обо мне
-                .item.portfolio Портфолио
-                .item.feedback Форма связи
-            .contacts
-                .contacts__title Контакты
-                .contacts__description.
-                    Skype: frollodecol <br/>
-                    Phone: +7 (952) 916-20-35 <br/>
-                    Email: frollodecol@gmail.com <br/>
+            .left-container__title
+                .left-container__name-and-position
+                    .name Клод Фролло
+                    .position HTML-верстальщик
+                .left-container__button
+                    i.icon-cross
+                    i.icon-menu
+            .left-container__description
+                .navigation
+                    .item.about.active Обо мне
+                    .item.portfolio Портфолио
+                    .item.for-customer Для заказчиков
+                    .item.feedback Форма связи
+                .contacts
+                    .contacts__title Контакты
+                    .contacts__description.
+                        Skype: frollodecol <br/>
+                        Phone: +7 (952) 916-20-35 <br/>
+                        Email: frollodecol@gmail.com <br/>
 
-    .right__about
-        .page
+    .right
+        .page__about
             .page__title Обо мне
             p Разработчик веб-сайтов.
-            p Хорошо знаю HTML и CSS. Владею приёмами адаптивной и резиновой верстки, при предоставлении всей необходимой графики даже с учётом дисплеев с более высокой плотностью пикселей. При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.
+            p Хорошо знаю HTML и CSS. Владею приёмами кросссбраузерной, адаптивной и резиновой верстки, а также приёмами вёрстки для дисплеев с более высокой плотностью пикселей (ретина). При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.
             p Также есть поверхностные знания в PHP и в области администрирования веб-серверов.
-            p.center Открыт для сотрудничества.
-        .copyright Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a>
-    //build:js js/main.min.js        
+            p Если эти навыки вас заинтересовали, можете почитать обо мне ещё <span class='additional-show' title='Щёлкни меня!'>немножко:</span>
+            .additional 
+                p Ещё немножко
+                p И ещё немножко
+                p.additional-hide Скрыть
+            p Если верстальщик нужен вам не на постоянную работу, а просто требуется сверстать сайт-другой, посмотрите раздел "Для заказчиков".
+        .page__portfolio
+            .page__title Портфолио
+            p Первый абзац портфолио
+            p Второй абзац портфолио
+            p Третий абзац портфолио
+        .page__for-customer
+            .page__title Для заказчиков
+            p Первый абзац
+            p Второй абзац
+            p Третий абзац
+        .copyright. 
+            Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a>
+    //build:js js/main.min.js   
+    script(src='js/main.js') 
+    script(src='js/contact.js')    
     //endbuild

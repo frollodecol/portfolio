@@ -1,18 +1,82 @@
 @media (max-width: 960px) {
   .left {
+    display: block;
     position: static;
     width: 100%;
+    background-color: #f1f1f1;
+    min-height: auto;
+    margin: 0px auto;
+    border: none;
+    padding: 0px;
 
     .left-container {
+      max-width: none;
+      display: block;
       width: 100%;
-      margin: 0px auto;
+      margin: 0px;
+      padding: 0px;
+
+      &__title {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        
+        background-color: #fff;
+        height: 255px;
+
+        .position {
+          margin-bottom: 0px;
+        }
+      }
+      &__name-and-position {
+        margin-right: 60px;
+      }
+      &__button {
+        display: block;
+        width: 55px;
+        height: 55px;
+        border: 1px solid #333; 
+        margin-left: 60px;
+        cursor: pointer;
+        line-height: 55px;
+        font-size: 15px;
+        text-align: center;
+        color: #333;
+
+        &:hover {
+          color: rgba(#333, .7);
+          border-color: rgba(#333, .7);
+        }
+
+        i.icon-cross {
+          display: none;
+        } 
+      }
     }
 
-    .navigation {
+
+    .left-container__description {
+      margin-top: 80px;
+      margin-left: 5%;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 60px;
+      padding-bottom: 40px;
+      width: 80%;
+      max-width: 750px;
+      background-color: #fff;
+      border: 1px solid #e6e6e6;      
       display: none;
     }
-    .contacts {
-      display: none;
+
+  }
+  .right {
+    min-height: auto;
+    width: 100%;
+
+    .page__about {
+      margin-bottom: 80px;
     }
   }
   
