@@ -6,108 +6,95 @@ var leftContainerButtonMenu = document.querySelector('.left-container__button i.
 var leftContainerDescription = document.querySelector('.left-container__description');
 
 leftContainerButton.addEventListener('click', function() {
-  if (leftContainerDescription.style.display == 'none') {
-    leftContainerDescription.style.display = 'block';
-    leftContainerButtonMenu.style.display = 'none';
-    leftContainerButtonCross.style.display = 'inline';
-  }
-  else {
+  if (  leftContainerDescription.style.display == '' ||
+        leftContainerDescription.style.display == 'block' ) {
     leftContainerDescription.style.display = 'none';
     leftContainerButtonMenu.style.display = 'inline';
-    leftContainerButtonCross.style.display = 'none';    
+    leftContainerButtonCross.style.display = 'none';
+  }
+  else {
+    leftContainerDescription.style.display = 'block';
+    leftContainerButtonMenu.style.display = 'none';
+    leftContainerButtonCross.style.display = 'inline';    
   }
 });
 
-//Открытие/закрытие дополнительной информации обо мне
+//Работа меню навигации - самый сложный блок кода
 
-var aboutPageAdditionalShow = document.querySelector('.right .page__about .additional-show');
-var aboutPageAdditionalHide = document.querySelector('.right .page__about .additional-hide');
-var aboutPageAdditional = document.querySelector('.additional');
-
-aboutPageAdditionalShow.addEventListener('click', function() {
-  if (aboutPageAdditional.style.display == '' || aboutPageAdditional.style.display == 'none') {
-    aboutPageAdditional.style.display = 'block';
-  }
-});
-aboutPageAdditionalHide.addEventListener('click', function() {
-  if (aboutPageAdditional.style.display == 'block') {
-    aboutPageAdditional.style.display = 'none';
-  }  
-});
-
-//Самая сложная часть кода - переключение менюшек
-
-var pageAbout = document.querySelector('.right .page__about');
-var pagePortfolio = document.querySelector('.right .page__portfolio');
-var pageForCustomer = document.querySelector('.right .page__for-customer');
-
+var navigationItems = document.querySelectorAll('.navigation .item');
 var navigationAbout = document.querySelector('.navigation .about');
 var navigationPortfolio = document.querySelector('.navigation .portfolio');
-var navigationForCustomer = document.querySelector('.navigation .for-customer');
-var navigationItems = document.querySelectorAll('.navigation .item');
+var navigationFeedback = document.querySelector('.navigation .feedback')
 
-navigationAbout.addEventListener('click', function() {
-  if (pageAbout.style.display == 'none' || pageAbout.style.display =='') {
-    pagePortfolio.style.display = 'none';
-    pageForCustomer.style.display = 'none';
-    pageAbout.style.display = 'block';
-    for (var i=0; i<navigationItems.length; i++) {
-      navigationItems[i].classList.remove('active');
-    }
-    navigationAbout.classList.add('active');
-  }
-});
+var rightBlock = document.querySelector('.right');
+var rightContainer = document.querySelector('.right__container');
+var pages = document.querySelectorAll('.right>.right__container>[class^="page"]');
+var pageAbout = document.querySelector('.page__about');
+var pagePortfolio = document.querySelector('.page__portfolio');
+var pageFeedback = document.querySelector('.page__feedback');
 
-navigationPortfolio.addEventListener('click', function() {
-  if (pagePortfolio.style.display == 'none' || pagePortfolio.style.display =='') {
-    pageAbout.style.display = 'none';
-    pageForCustomer.style.display = 'none';
-    pagePortfolio.style.display = 'block';
-    for (var i=0; i<navigationItems.length; i++) {
-      navigationItems[i].classList.remove('active');
-    }
-    navigationPortfolio.classList.add('active');
-  }
-});
+for (var i=0; i<navigationItems.length; i++) {
+  navigationItems[i].addEventListener('click', function(event) {
+    if (!event.target.classList.contains('active')) {
+      if (document.documentElement.clientWidth > 960) {
+        rightContainer.style.width = rightContainer.offsetWidth + 'px';
+        rightBlock.classList.add('js-right--hidden');
+        for (var k=0; k<navigationItems.length; k++) {
+          navigationItems[k].classList.remove('active');
+          if (navigationItems[k] == event.target) {
+            navigationItems[k].classList.add('active');
+          };
+        };
 
-navigationForCustomer.addEventListener('click', function() {
-  if (pageForCustomer.style.display == 'none' || pageForCustomer.style.display =='') {
-    pageAbout.style.display = 'none';
-    pagePortfolio.style.display = 'none';
-    pageForCustomer.style.display = 'block';
-    for (var i=0; i<navigationItems.length; i++) {
-      navigationItems[i].classList.remove('active');
-    }
-    navigationForCustomer.classList.add('active');
-  }
-});
+        var currentNavigationItem = event.target;
+        rightBlock.addEventListener('transitionend', function(event) {
+          for (var j=0; j<pages.length; j++) {
+            pages[j].style.display = 'none';
+            if (currentNavigationItem == navigationAbout) {
+              pageAbout.style.display = 'block';
+            };
+            if (currentNavigationItem == navigationPortfolio) {
+              pagePortfolio.style.display = 'block';
+            };
+            if (currentNavigationItem == navigationFeedback) {
+              pageFeedback.style.display = 'block';
+            };
+          };
+          setTimeout( function() {
+            rightBlock.classList.remove('js-right--hidden');
+          },100);
+          setTimeout(function() {
+            rightContainer.style.width = '100%';
+          }, 600);
 
-//Всплывающее окошко формы обратной связи
+        });
+      };
+      if (document.documentElement.clientWidth <=960) {
+        for (var j=0; j<navigationItems.length; j++) {
+          navigationItems[j].classList.remove('active');
+          if (navigationItems[j] == event.target) {
+            navigationItems[j].classList.add('active');
+          };
+        };
+        for (var j=0; j<pages.length; j++) {
+          pages[j].style.display = 'none';
+        };
+        if (event.target == navigationAbout) {
+          pageAbout.style.display = 'block';
+        };
+        if (event.target == navigationPortfolio) {
+          pagePortfolio.style.display = 'block';
+        };
+        if (event.target == navigationFeedback) {
+          pageFeedback.style.display = 'block';
+        };
+      };
+    };
 
-var navigationFeedback = document.querySelector('.navigation .feedback');
-var popup = document.querySelector('.popup');
-var popupShadow = document.querySelector('.popup__shadow');
+  });
+};
 
-navigationFeedback.addEventListener('click', function() {
-  popup.style.display = 'flex';
-  setTimeout( function() {
-    if (popup.style.display == 'flex') {
-    popup.style.opacity = '1';
-    }
-  }, 50)
-
-});
-popupShadow.addEventListener('click', function() {
-  popup.style.opacity = '0';
-  setTimeout(function() {
-    popup.style.display = 'none';
-  }, 1000)
-});
-
-
-
-
-
+//Изменение правой границы body при появлении скроллбара
 
 
 

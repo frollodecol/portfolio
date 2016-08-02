@@ -9,14 +9,6 @@ html
     link(rel='stylesheet' href='css/style.css')
     //endbuild
   body
-    .popup
-        .popup__shadow
-        form.popup__window#feedback(method='post')
-            input(type='text' name='feedbackName' required placeholder='Имя')
-            input(type='email' name='feedbackEmail' required placeholder='E-mail')
-            textarea(name='feedbackMessage' required) Введите здесь своё сообщение. Дополнительные контакты, помимо e-mail'а, очень приветствуются.
-            input(type='submit' value='Отправить')
-
     .left
         .left-container
             .left-container__title
@@ -30,7 +22,6 @@ html
                 .navigation
                     .item.about.active Обо мне
                     .item.portfolio Портфолио
-                    .item.for-customer Для заказчиков
                     .item.feedback Форма связи
                 .contacts
                     .contacts__title Контакты
@@ -40,29 +31,32 @@ html
                         Email: frollodecol@gmail.com <br/>
 
     .right
-        .page__about
-            .page__title Обо мне
-            p Разработчик веб-сайтов.
-            p Хорошо знаю HTML и CSS. Владею приёмами кросссбраузерной, адаптивной и резиновой верстки, а также приёмами вёрстки для дисплеев с более высокой плотностью пикселей (ретина). При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.
-            p Также есть поверхностные знания в PHP и в области администрирования веб-серверов.
-            p Если эти навыки вас заинтересовали, можете почитать обо мне ещё <span class='additional-show' title='Щёлкни меня!'>немножко:</span>
-            .additional 
-                p Ещё немножко
-                p И ещё немножко
-                p.additional-hide Скрыть
-            p Если верстальщик нужен вам не на постоянную работу, а просто требуется сверстать сайт-другой, посмотрите раздел "Для заказчиков".
-        .page__portfolio
-            .page__title Портфолио
-            p Первый абзац портфолио
-            p Второй абзац портфолио
-            p Третий абзац портфолио
-        .page__for-customer
-            .page__title Для заказчиков
-            p Первый абзац
-            p Второй абзац
-            p Третий абзац
-        .copyright. 
-            Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a>
+        .right__container
+            .page__about
+                .page__title Обо мне
+                p HTML-верстальщик
+                p Хорошо знаю HTML и CSS. Владею приёмами кросссбраузерной, адаптивной и резиновой верстки, а также приёмами вёрстки для дисплеев с более высокой плотностью пикселей (ретина). При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.
+                p Также есть поверхностные знания в PHP и в области администрирования веб-серверов.
+            .page__portfolio
+                .page__title Портфолио
+                h2 Седона
+                p Сверстал простенький адаптивный и резиновый макет с векторной графикой, дополнительное внимание уделил пользователям с ретина-дисплеями. Опять же, сетка свёрстана на флексах, что приводит к неработоспособности сайта в старых браузерах ниже IE10.
+                a(href='http://frollodecol.github.io/sedona/dist/index.html' target='_blank') Посмотреть
+                a(href='https://github.com/frollodecol/frollodecol.github.io/tree/master/sedona/app' target='_blank') Исходники
+                h2 Барбершоп
+                p Сверстал простенький статичный макет с модальным окошком регистрации. Старался использовать БЭМ-нейминг. Сетка построена не на флоатах, а на флексах, что с одной стороны даёт лучше читаемый и модернизируемый код, а с другой - сетка вообще не будет работать в старых браузерах ниже IE10.
+                a(href='http://frollodecol.github.io/barbershop/index.html' target='_blank') Посмотреть
+                a(href='https://github.com/frollodecol/frollodecol.github.io/tree/master/barbershop') Исходники
+
+            .page__feedback
+                .page__title Обратная связь
+                form.popup__window#feedback(method='post')
+                    input(type='text' name='feedbackName' required placeholder='Имя')
+                    input(type='email' name='feedbackEmail' required placeholder='E-mail')
+                    textarea(name='feedbackMessage' required placeholder='Тест') 
+                    input(type='submit' value='Отправить')
+            .copyright. 
+                Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a>
     //build:js js/main.min.js   
     script(src='js/main.js') 
     script(src='js/contact.js')    

@@ -10,15 +10,6 @@
     <!--endbuild-->
   </head>
   <body>
-    <div class="popup">
-      <div class="popup__shadow"></div>
-      <form class="popup__window" id="feedback" method="post">
-        <input type="text" name="feedbackName" required="required" placeholder="Имя"/>
-        <input type="email" name="feedbackEmail" required="required" placeholder="E-mail"/>
-        <textarea name="feedbackMessage" required="required">Введите здесь своё сообщение. Дополнительные контакты, помимо e-mail'а, очень приветствуются.</textarea>
-        <input type="submit" value="Отправить"/>
-      </form>
-    </div>
     <div class="left">
       <div class="left-container">
         <div class="left-container__title">
@@ -32,7 +23,6 @@
           <div class="navigation">
             <div class="item about active">Обо мне</div>
             <div class="item portfolio">Портфолио</div>
-            <div class="item for-customer">Для заказчиков</div>
             <div class="item feedback">Форма связи</div>
           </div>
           <div class="contacts">
@@ -48,32 +38,31 @@
       </div>
     </div>
     <div class="right">
-      <div class="page__about">
-        <div class="page__title">Обо мне</div>
-        <p>Разработчик веб-сайтов.</p>
-        <p>Хорошо знаю HTML и CSS. Владею приёмами кросссбраузерной, адаптивной и резиновой верстки, а также приёмами вёрстки для дисплеев с более высокой плотностью пикселей (ретина). При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.</p>
-        <p>Также есть поверхностные знания в PHP и в области администрирования веб-серверов.</p>
-        <p>Если эти навыки вас заинтересовали, можете почитать обо мне ещё <span class='additional-show' title='Щёлкни меня!'>немножко:</span></p>
-        <div class="additional"> 
-          <p>Ещё немножко</p>
-          <p>И ещё немножко</p>
-          <p class="additional-hide">Скрыть</p>
+      <div class="right__container">
+        <div class="page__about">
+          <div class="page__title">Обо мне</div>
+          <p>HTML-верстальщик</p>
+          <p>Хорошо знаю HTML и CSS. Владею приёмами кросссбраузерной, адаптивной и резиновой верстки, а также приёмами вёрстки для дисплеев с более высокой плотностью пикселей (ретина). При работе использую систему сборки gulp, а также препроцессоры SCSS и Pug (бывший Jade). С JS и библиотекой jQuery знаком на довольно низком уровне, но активно изучаю их.</p>
+          <p>Также есть поверхностные знания в PHP и в области администрирования веб-серверов.</p>
         </div>
-        <p>Если верстальщик нужен вам не на постоянную работу, а просто требуется сверстать сайт-другой, посмотрите раздел "Для заказчиков".</p>
+        <div class="page__portfolio">
+          <div class="page__title">Портфолио</div>
+          <h2>Седона</h2>
+          <p>Сверстал простенький адаптивный и резиновый макет с векторной графикой, дополнительное внимание уделил пользователям с ретина-дисплеями. Опять же, сетка свёрстана на флексах, что приводит к неработоспособности сайта в старых браузерах ниже IE10.</p><a href="http://frollodecol.github.io/sedona/dist/index.html" target="_blank">Посмотреть</a><a href="https://github.com/frollodecol/frollodecol.github.io/tree/master/sedona/app" target="_blank">Исходники</a>
+          <h2>Барбершоп</h2>
+          <p>Сверстал простенький статичный макет с модальным окошком регистрации. Старался использовать БЭМ-нейминг. Сетка построена не на флоатах, а на флексах, что с одной стороны даёт лучше читаемый и модернизируемый код, а с другой - сетка вообще не будет работать в старых браузерах ниже IE10.</p><a href="http://frollodecol.github.io/barbershop/index.html" target="_blank">Посмотреть</a><a href="https://github.com/frollodecol/frollodecol.github.io/tree/master/barbershop">Исходники</a>
+        </div>
+        <div class="page__feedback">
+          <div class="page__title">Обратная связь</div>
+          <form class="popup__window" id="feedback" method="post">
+            <input type="text" name="feedbackName" required="required" placeholder="Имя"/>
+            <input type="email" name="feedbackEmail" required="required" placeholder="E-mail"/>
+            <textarea name="feedbackMessage" required="required" placeholder="Тест"> </textarea>
+            <input type="submit" value="Отправить"/>
+          </form>
+        </div>
+        <div class="copyright">Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a></div>
       </div>
-      <div class="page__portfolio">
-        <div class="page__title">Портфолио</div>
-        <p>Первый абзац портфолио</p>
-        <p>Второй абзац портфолио</p>
-        <p>Третий абзац портфолио</p>
-      </div>
-      <div class="page__for-customer">
-        <div class="page__title">Для заказчиков</div>
-        <p>Первый абзац</p>
-        <p>Второй абзац</p>
-        <p>Третий абзац</p>
-      </div>
-      <div class="copyright">Copyright © 2015 - Frollo Decol. <a target='_blank' href='https://github.com/frollodecol/portfolio'>Исходники.</a> <a target='_blank' href='http://rylov.pro/'>Дизайн.</a></div>
     </div>
     <!--build:js js/main.min.js   -->
     <script src="js/main.js"> </script>

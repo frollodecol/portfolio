@@ -9,7 +9,13 @@
   </head>
   <body>
     <div class="popup">
-      <form class="window"></form>
+      <div class="popup__shadow"></div>
+      <form class="popup__window" id="feedback" method="post">
+        <input type="text" name="feedbackName" required="required" placeholder="Имя"/>
+        <input type="email" name="feedbackEmail" required="required" placeholder="E-mail"/>
+        <textarea name="feedbackMessage" required="required">Введите здесь своё сообщение. Дополнительные контакты, помимо e-mail'а, очень приветствуются.</textarea>
+        <input type="submit" value="Отправить"/>
+      </form>
     </div>
     <div class="left">
       <div class="left-container">
@@ -51,7 +57,7 @@
           <p>И ещё немножко</p>
           <p class="additional-hide">Скрыть</p>
         </div>
-        <p>Если вам не нужен верстальщик на постоянную работу, а нужно просто сверстать сайт-другой, посмотрите раздел "Для заказчиков".</p>
+        <p>Если верстальщик нужен вам не на постоянную работу, а просто требуется сверстать сайт-другой, посмотрите раздел "Для заказчиков".</p>
       </div>
       <div class="page__portfolio">
         <div class="page__title">Портфолио</div>
